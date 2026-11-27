@@ -1,0 +1,70 @@
+{{- $page := .page -}}
+{{- $withNav := .withNav | default false -}}
+<article class="letter">
+  <div class="letter-frame">
+    <div class="letter-inner">
+      <span class="corner c-tl" aria-hidden="true"></span>
+      <span class="corner c-tr" aria-hidden="true"></span>
+      <span class="corner c-bl" aria-hidden="true"></span>
+      <span class="corner c-br" aria-hidden="true"></span>
+
+      <header class="letter-head">
+        <p class="letter-kicker">手书 · 信札</p>
+        <h1 class="letter-title">{{ $page.Title }}</h1>
+      </header>
+
+      {{ with $page.Params.salutation }}
+      <p class="salutation">{{ . }}</p>
+      {{ end }}
+
+      <div class="letter-body heti">
+        {{ $page.Content }}
+      </div>
+
+      {{ with $page.Params.closing }}
+      <p class="closing">{{ . }}</p>
+      {{ end }}
+
+      <div class="letter-sign">
+        {{ with $page.Params.signature }}
+        <p class="signature">{{ . }}</p>
+        {{ end }}
+        {{ with $page.Params.lunar_date }}
+        <p class="lunar-date">{{ . }}</p>
+        {{ end }}
+        {{ with $page.Params.seal }}
+        <span class="seal" aria-label="印：{{ . }}"><span>{{ . }}</span></span>
+        {{ else }}
+        <span class="seal" aria-hidden="true"><span>{{ site.Params.master | default "青崖" }}</span></span>
+        {{ end }}
+      </div>
+
+      {{ with $page.Params.postscript }}
+      <div class="postscript">{{ . | markdownify }}</div>
+      {{ end }}
+
+      {{ if $withNav }}
+      {{- $all := (where site.RegularPages "Section" "posts").ByDate.Reverse -}}
+      {{- $index := -1 -}}
+      {{- range $i, $p := $all -}}
+        {{- if eq $p.RelPermalink $page.RelPermalink -}}{{- $index = $i -}}{{- end -}}
+      {{- end -}}
+      {{- if ge $index 0 }}
+      <nav class="letter-nav" aria-label="信札翻页">
+        {{- $olderIndex := add $index 1 -}}
+        {{- if lt $olderIndex (len $all) -}}
+          {{- with index $all $olderIndex }}
+        <a href="{{ .RelPermalink }}" title="{{ .Title }}">上一封</a>
+          {{- end -}}
+        {{- end -}}
+        {{- if gt $index 0 -}}
+          {{- with index $all (sub $index 1) }}
+        <a href="{{ .RelPermalink }}" title="{{ .Title }}">下一封</a>
+          {{- end -}}
+        {{- end }}
+      </nav>
+      {{- end }}
+      {{ end }}
+    </div>
+  </div>
+</article>

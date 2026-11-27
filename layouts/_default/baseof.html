@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-grid="zhu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+
+  <script>
+    // 首屏前恢复纸色与栏线，避免闪烁
+    (function () {
+      try {
+        var root = document.documentElement;
+        var paper = localStorage.getItem("epistle_paper_theme");
+        var grid = localStorage.getItem("epistle.grid");
+        var aliases = {
+          tianqing: "celadon",
+          songyan: "night",
+          qing: "celadon",
+          hui: "night",
+          xuan: "default",
+          chen: "warm"
+        };
+        paper = aliases[paper] || paper;
+        if (["warm", "celadon", "night"].indexOf(paper) > -1) {
+          root.setAttribute("data-paper", paper);
+        }
+        if (["zhu", "wu", "none"].indexOf(grid) > -1) {
+          root.setAttribute("data-grid", grid);
+        }
+      } catch (error) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ "css/heti.min.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/epistle.css" | relURL }}">
+
+  {{ with .OutputFormats.Get "rss" }}
+  <link rel="alternate" type="application/rss+xml" href="{{ .RelPermalink }}" title="{{ site.Title }}">
+  {{ end }}
+</head>
+<body class="{{ if .IsHome }}is-home{{ else }}is-page{{ end }}">
+  {{ partial "controls.html" . }}
+
+  <main class="site">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <script src="{{ "js/scroll.js" | relURL }}" defer></script>
+</body>
+</html>

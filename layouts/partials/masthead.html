@@ -1,0 +1,18 @@
+{{- $studio := site.Params.studio | default site.Title -}}
+<aside class="masthead">
+  <p class="studio">{{ $studio }}</p>
+
+  <div class="masthead-seal">
+    <span class="seal seal--large seal--faint" aria-hidden="true"><span>{{ site.Params.master | default "青崖" }}</span></span>
+  </div>
+
+  <nav class="masthead-nav" aria-label="斋中入口">
+    <a href="{{ "posts/" | relURL }}">展开信匣<span>（归档）</span></a>
+    <a href="{{ "about/" | relURL }}">斋主简介</a>
+    {{ if not .IsHome }}
+    <a href="{{ "/" | relURL }}">回到卷首</a>
+    {{ end }}
+  </nav>
+
+  <p class="masthead-motto">{{ site.Params.tagline | default "一纸一墨，寄与故人" }}</p>
+</aside>

@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{- $pages := .Pages.ByDate.Reverse -}}
+<div class="scroll-viewport" data-scroll>
+  <div class="scroll-track">
+    {{ partial "masthead.html" . }}
+
+    <section class="archive">
+      <h1 class="archive-title">{{ if eq .Section "posts" }}信匣{{ else }}{{ .Title }}{{ end }}</h1>
+      <p class="archive-note">共 {{ len $pages }} 通 · 依时倒序</p>
+
+      <div class="archive-list">
+        {{ range $pages }}
+        <a class="bookmark" href="{{ .RelPermalink }}">
+          <p class="bookmark-date">{{ with .Params.lunar_date }}{{ . }}{{ else }}{{ .Date.Format "2006年01月02日" }}{{ end }}</p>
+          <p class="bookmark-title">{{ .Title }}</p>
+          <span class="seal" aria-hidden="true"><span>{{ site.Params.master | default "青崖" }}</span></span>
+        </a>
+        {{ else }}
+        <p class="archive-empty">尚无书札。</p>
+        {{ end }}
+      </div>
+    </section>
+  </div>
+</div>
+{{ end }}

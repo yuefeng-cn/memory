@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>青崖书斋</title>
+		<link>https://example.org/</link>
+		<description>Recent content on 青崖书斋</description>
+		<generator>Hugo</generator>
+		<language>zh-CN</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 27 Nov 2026 10:00:00 +0800</lastBuildDate>
+		
+			<atom:link href="https://example.org/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>秋夜寄友人书</title>
+				<link>https://example.org/posts/2026-11-27-qiu-ye-ji-you-ren/</link>
+				<pubDate>Fri, 27 Nov 2026 10:00:00 +0800</pubDate>
+				<guid>https://example.org/posts/2026-11-27-qiu-ye-ji-you-ren/</guid>
+				<description>&lt;p&gt;夜坐书斋，炉火初温，窗外梧叶已尽。忽忆去岁同坐此间，煮茶论诗，直至晓钟。今月色如故，而故人千里，不能无惘然也。案头残烛摇影，照见壁上旧题，墨痕犹润，人事已非，为之掩卷良久。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>斋主简介</title>
+				<link>https://example.org/about/</link>
+				<pubDate>Fri, 20 Nov 2026 09:00:00 +0800</pubDate>
+				<guid>https://example.org/about/</guid>
+				<description>&lt;p&gt;青崖，不知何许人。少好读书，长而无所成。爱山川，喜笔墨，尤爱夜雨孤灯时，临数行古帖。性懒，不喜应酬；然遇故人，则谈至夜分不倦。&lt;/p&gt;&#xA;&lt;p&gt;尝筑书斋于城南，窗前有梅一株，阶下有石数拳。春夏读书，秋冬煮酒。兴至则写数纸，兴尽则掷笔高卧。人问其号，曰：“青崖，取山色长青、崖石不语之意。”&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>霜降后寄北窗</title>
+				<link>https://example.org/posts/2026-10-27-shuang-jiang-ji-bei-chuang/</link>
+				<pubDate>Tue, 27 Oct 2026 20:00:00 +0800</pubDate>
+				<guid>https://example.org/posts/2026-10-27-shuang-jiang-ji-bei-chuang/</guid>
+				<description>&lt;p&gt;霜降已过，草木黄落。晨起推窗，见远山一夜白头，始知寒气渐深。斋中旧炉不堪用，昨日从市上换得一具，泥色粗拙，而火气甚匀，煮水作松涛声，颇可娱耳。&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>中秋答客问</title>
+				<link>https://example.org/posts/2026-09-25-zhong-qiu-da-ke-wen/</link>
+				<pubDate>Fri, 25 Sep 2026 21:00:00 +0800</pubDate>
+				<guid>https://example.org/posts/2026-09-25-zhong-qiu-da-ke-wen/</guid>
+				<description>&lt;p&gt;承问近日何所事，愧无以对。晨起扫地，煮茶，读旧书数页；午后临帖，倦则卧；夜来月色满庭，与家人分食胡饼，说些闲话。如此而已。&lt;/p&gt;&#xA;&lt;p&gt;客问：“以子之才，何不出而用世？”仆笑而答曰：鱼相忘于江湖，人相忘于道术。江湖未必深，而鱼自知其乐；道术未必高，而人自安其拙。今使仆舍此烟霞，趋走于车尘马足之间，虽或得一时之名，然夜半扪心，恐不能无憾。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

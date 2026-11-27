@@ -1,0 +1,20 @@
+{{ define "main" }}
+{{- $latest := false -}}
+{{- with where site.RegularPages "Section" "posts" -}}
+  {{- $latest = index (.ByDate.Reverse) 0 -}}
+{{- end -}}
+<div class="scroll-viewport" data-scroll>
+  <div class="scroll-track">
+    {{ partial "masthead.html" . }}
+
+    {{ with $latest }}
+      {{ partial "letter-sheet.html" (dict "page" . "withNav" false) }}
+    {{ else }}
+      <section class="archive">
+        <h1 class="archive-title">信匣尚空</h1>
+        <p class="archive-note">待裁新纸，静候第一封手书。</p>
+      </section>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

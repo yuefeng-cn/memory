@@ -1,0 +1,21 @@
+baseURL = 'https://example.org/'
+locale = 'zh-CN'
+defaultContentLanguage = 'zh-cn'
+title = '青崖书斋'
+hasCJKLanguage = true
+
+[params]
+  studio = '青崖书斋'
+  master = '青崖'
+  tagline = '一纸一墨，寄与故人'
+  description = '竖排信札，横卷展读。'
+
+[markup.goldmark.renderer]
+  hardWraps = false
+  unsafe = false
+
+[markup.goldmark.parser]
+  autoHeadingID = true
+
+[markup.goldmark.extensions]
+  typographer = true
