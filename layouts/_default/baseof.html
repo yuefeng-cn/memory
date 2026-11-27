@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-grid="zhu">
+<html lang="zh-CN" data-paper="night" data-grid="zhu">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +25,9 @@
         paper = aliases[paper] || paper;
         if (["warm", "celadon", "night"].indexOf(paper) > -1) {
           root.setAttribute("data-paper", paper);
+        } else if (paper === "default") {
+          // 存储的偏好是素白时，必须移除默认的松烟属性
+          root.removeAttribute("data-paper");
         }
         if (["zhu", "wu", "none"].indexOf(grid) > -1) {
           root.setAttribute("data-grid", grid);
@@ -33,6 +36,7 @@
     })();
   </script>
 
+  <link rel="icon" type="image/svg+xml" href="{{ "img/logo.svg" | relURL }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC:wght@400;700&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">

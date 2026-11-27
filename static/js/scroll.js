@@ -87,7 +87,7 @@
     xuan: "default",
     chen: "warm"
   };
-  var defaultPaper = "default";
+  var defaultPaper = "night";
 
   var normalizePaper = function (name) {
     var mapped = paperAliases[name] || name;
@@ -97,7 +97,8 @@
   var applyPaper = function (name) {
     var target = normalizePaper(name);
 
-    if (target === defaultPaper) {
+    // 素白是 :root 的基准纸色，需移除属性才会生效
+    if (target === "default") {
       root.removeAttribute("data-paper");
     } else {
       root.setAttribute("data-paper", target);
