@@ -19,3 +19,8 @@ hasCJKLanguage = true
 
 [markup.goldmark.extensions]
   typographer = true
+
+# 图片资源缓存跟随 Hugo 的 cacheDir，便于 Cloudflare 构建缓存复用
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

@@ -2,3 +2,7 @@
 /public/
 /resources/_gen/
 /.hugo_build.lock
+/.cache/
+
+# Cloudflare 本地构建产物
+/.wrangler/

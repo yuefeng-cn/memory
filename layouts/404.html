@@ -1,0 +1,24 @@
+{{ define "main" }}
+<div class="scroll-viewport" data-scroll>
+  <div class="scroll-track">
+    {{ partial "masthead.html" . }}
+
+    <article class="page">
+      <div class="letter-frame">
+        <div class="letter-inner">
+          <span class="corner c-tl" aria-hidden="true"></span>
+          <span class="corner c-tr" aria-hidden="true"></span>
+          <span class="corner c-bl" aria-hidden="true"></span>
+          <span class="corner c-br" aria-hidden="true"></span>
+
+          <h1 class="page-title">信笺失落在途中</h1>
+          <div class="letter-body">
+            <p>你要找的这一页没有寻见，许是被风吹散了。</p>
+            <p><a href="{{ "/" | relURL }}">回到卷首</a></p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
+{{ end }}
