@@ -1,13 +1,13 @@
 baseURL = 'https://memory.get-rich.workers.dev/'
 locale = 'zh-CN'
 defaultContentLanguage = 'zh-cn'
-title = '青崖书斋'
+title = '回忆录'
 hasCJKLanguage = true
 
 [params]
-  studio = '青崖书斋'
-  master = '青崖'
-  tagline = '一纸一墨，寄与故人'
+  studio = '回忆录'
+  master = '松烟'
+  tagline = '不纵欲，诸行了无生趣。'
   description = '竖排信札，横卷展读。'
 
 [markup.goldmark.renderer]
