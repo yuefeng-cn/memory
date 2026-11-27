@@ -1,32 +1,36 @@
-<aside class="floating-toolbar" aria-label="信笺设置与展卷控制">
-  <div class="tool-group">
-    <span>纸笺：</span>
-    <button class="tool-btn" type="button" data-set-paper="default" aria-pressed="false" title="宣纸素白">
-      <span class="dot" style="background:#f7f3ea"></span>素白
-    </button>
-    <button class="tool-btn" type="button" data-set-paper="warm" aria-pressed="false" title="暖黄老笺">
-      <span class="dot" style="background:#f1e3c8"></span>老笺
-    </button>
-    <button class="tool-btn" type="button" data-set-paper="celadon" aria-pressed="false" title="雨过天青">
-      <span class="dot" style="background:#ebf2ef"></span>天青
-    </button>
-    <button class="tool-btn is-active" type="button" data-set-paper="night" aria-pressed="true" title="松烟墨夜">
-      <span class="dot" style="background:#212326"></span>松烟
-    </button>
-  </div>
-
-  <span class="tool-divider"></span>
-
-  <div class="tool-group">
-    <span>格栏：</span>
-    <button class="tool-btn is-active" type="button" data-set-grid="zhu" aria-pressed="true">朱丝栏</button>
-    <button class="tool-btn" type="button" data-set-grid="wu" aria-pressed="false">乌丝栏</button>
-    <button class="tool-btn" type="button" data-set-grid="none" aria-pressed="false">素笺</button>
-  </div>
-
-  <span class="tool-divider"></span>
+<aside class="tool-dock" aria-label="信笺设置与展卷控制">
+  <button class="tool-toggle" type="button" data-tool-toggle aria-expanded="false" aria-controls="epistle-settings" aria-label="展开信笺设置" title="信笺设置">
+    <span aria-hidden="true">笺</span>
+  </button>
 
   <button class="tool-btn scroll-hint-btn" type="button" data-scroll-start title="回到最右侧卷首">
     ⇢ 归卷首
   </button>
+
+  <div class="tool-panel" id="epistle-settings" data-tool-panel hidden>
+    <div class="tool-group">
+      <span>纸笺：</span>
+      <button class="tool-btn" type="button" data-set-paper="default" aria-pressed="false" title="宣纸素白">
+        <span class="dot" style="background:#f7f3ea"></span>素白
+      </button>
+      <button class="tool-btn" type="button" data-set-paper="warm" aria-pressed="false" title="暖黄老笺">
+        <span class="dot" style="background:#f1e3c8"></span>老笺
+      </button>
+      <button class="tool-btn" type="button" data-set-paper="celadon" aria-pressed="false" title="雨过天青">
+        <span class="dot" style="background:#ebf2ef"></span>天青
+      </button>
+      <button class="tool-btn is-active" type="button" data-set-paper="night" aria-pressed="true" title="松烟墨夜">
+        <span class="dot" style="background:#212326"></span>松烟
+      </button>
+    </div>
+
+    <span class="tool-divider"></span>
+
+    <div class="tool-group">
+      <span>格栏：</span>
+      <button class="tool-btn is-active" type="button" data-set-grid="zhu" aria-pressed="true">朱丝栏</button>
+      <button class="tool-btn" type="button" data-set-grid="wu" aria-pressed="false">乌丝栏</button>
+      <button class="tool-btn" type="button" data-set-grid="none" aria-pressed="false">素笺</button>
+    </div>
+  </div>
 </aside>

@@ -141,6 +141,34 @@
     }
   };
 
+  /* ---------- 设置面板开合：点印章展开，点外部或 Esc 收起 ---------- */
+  var toolDock = document.querySelector(".tool-dock");
+  var toolToggle = document.querySelector("[data-tool-toggle]");
+  var toolPanel = document.querySelector("[data-tool-panel]");
+
+  if (toolDock && toolToggle && toolPanel) {
+    var setPanelOpen = function (open) {
+      toolToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toolToggle.setAttribute("aria-label", open ? "收起信笺设置" : "展开信笺设置");
+      toolPanel.hidden = !open;
+    };
+
+    toolToggle.addEventListener("click", function () {
+      setPanelOpen(toolPanel.hidden);
+    });
+
+    document.addEventListener("click", function (event) {
+      if (toolPanel.hidden || toolDock.contains(event.target)) return;
+      setPanelOpen(false);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape" || toolPanel.hidden) return;
+      setPanelOpen(false);
+      toolToggle.focus();
+    });
+  }
+
   /* ---------- 控件绑定 ---------- */
   document.addEventListener("click", function (event) {
     var target = event.target;
